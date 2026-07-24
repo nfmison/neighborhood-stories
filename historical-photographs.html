@@ -13,176 +13,97 @@
 
     body {
       margin: 0;
-      padding: 40px 20px 80px;
+      min-height: 100vh;
+      padding: 30px 24px 70px;
       font-family: Arial, sans-serif;
+      background: white;
       color: #222;
-      background: #fff;
     }
 
-    header {
+    .page {
       width: min(1100px, 100%);
-      margin: 0 auto 40px;
+      margin: 0 auto;
     }
 
-    header a {
+    .back-link {
       color: #222;
       text-decoration: none;
       font-size: 15px;
     }
 
     h1 {
-      margin: 45px 0 10px;
-      font-size: clamp(30px, 5vw, 52px);
+      margin: 65px 0 15px;
+      font-size: clamp(38px, 6vw, 64px);
       font-weight: normal;
     }
 
     .introduction {
       max-width: 680px;
-      line-height: 1.6;
+      margin-bottom: 70px;
       color: #555;
+      line-height: 1.6;
+      font-size: 17px;
     }
 
-    .story {
-      width: min(1100px, 100%);
-      margin: 70px auto 0;
+    .subjects {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 45px;
+      flex-wrap: wrap;
     }
 
-    .story h2 {
-      margin-bottom: 8px;
-      font-size: 25px;
-      font-weight: normal;
-    }
-
-    .instruction {
-      margin-top: 0;
-      color: #666;
-      font-size: 14px;
-    }
-
-    .comparison {
-      position: relative;
-      width: 100%;
-      margin-top: 22px;
-      overflow: hidden;
-      background: #eee;
-      touch-action: none;
-      user-select: none;
-    }
-
-    .comparison img {
-      display: block;
-      width: 100%;
-      height: auto;
-      pointer-events: none;
-    }
-
-    .after-image {
-      position: relative;
-      z-index: 1;
-    }
-
-    .before-layer {
-      position: absolute;
-      z-index: 2;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 50%;
-      overflow: hidden;
-    }
-
-    .before-layer img {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      max-width: none;
-    }
-
-    .divider {
-      position: absolute;
-      z-index: 3;
-      left: 0;
-      top: 50%;
-      width: 100%;
-      height: 2px;
-      background: white;
-      box-shadow: 0 0 5px rgba(0, 0, 0, 0.6);
-      transform: translateY(-1px);
-      pointer-events: none;
-    }
-
-    .handle {
-      position: absolute;
-      z-index: 4;
-      left: 50%;
-      top: 50%;
-      width: 52px;
-      height: 52px;
-      border: 2px solid white;
+    .subject-circle {
+      width: 230px;
+      height: 230px;
+      border: 1px solid #333;
       border-radius: 50%;
-      background: rgba(0, 0, 0, 0.55);
-      color: white;
+
       display: flex;
       align-items: center;
       justify-content: center;
-      transform: translate(-50%, -50%);
-      font-size: 22px;
-      line-height: 1;
-      pointer-events: none;
-      box-shadow: 0 1px 7px rgba(0, 0, 0, 0.4);
+
+      padding: 28px;
+      text-align: center;
+      text-decoration: none;
+      color: #222;
+
+      font-size: 19px;
+      line-height: 1.35;
+
+      transition:
+        transform 0.25s ease,
+        background 0.25s ease;
     }
 
-    .labels {
-      position: absolute;
-      z-index: 5;
-      inset: 0;
-      pointer-events: none;
+    .subject-circle:hover,
+    .subject-circle:focus-visible {
+      transform: translateY(-5px);
+      background: #f5f5f5;
     }
 
-    .label {
-      position: absolute;
-      left: 14px;
-      padding: 7px 10px;
-      border-radius: 3px;
-      background: rgba(0, 0, 0, 0.6);
-      color: white;
-      font-size: 12px;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
+    .future-circle {
+      color: #999;
+      border-color: #aaa;
     }
 
-    .label-before {
-      top: 14px;
-    }
-
-    .label-after {
-      bottom: 14px;
-    }
-
-    .caption {
-      max-width: 760px;
-      margin-top: 18px;
-      line-height: 1.6;
-      color: #555;
-    }
-    .source {
-      margin-top: 22px;
-      font-size: 13px;
-      color: #888;
-}
-    @media (max-width: 600px) {
-      body {
-        padding-top: 25px;
-      }
-
-      .story {
+    @media (max-width: 650px) {
+      h1 {
         margin-top: 45px;
       }
 
-      .handle {
-        width: 44px;
-        height: 44px;
+      .introduction {
+        margin-bottom: 45px;
+      }
+
+      .subjects {
+        gap: 28px;
+      }
+
+      .subject-circle {
+        width: 190px;
+        height: 190px;
+        font-size: 17px;
       }
     }
   </style>
@@ -190,163 +111,50 @@
 
 <body>
 
-  <header>
-    <a href="index.html">← Neighborhood Stories</a>
+  <main class="page">
+
+    <a class="back-link" href="index.html">
+      ← Neighborhood Stories
+    </a>
 
     <h1>Historical photographs</h1>
 
     <p class="introduction">
-      Historical photographs restored and reinterpreted with restrained,
-      natural colours. Move the divider to compare the original photograph
-      with the modernized version.
+      Historical photographs presented alongside modern photographic
+      reconstructions. Select a subject to explore the original images
+      and their contemporary interpretations.
     </p>
-  </header>
 
-  <main>
-    <article class="story">
+    <nav class="subjects" aria-label="Historical photograph subjects">
 
-      <h2>Hakutsuru Sake Brewery Museum</h2>
+      <a
+        class="subject-circle"
+        href="hakutsuru-sake-brewery.html"
+      >
+        Hakutsuru<br>
+        Sake Brewery
+      </a>
 
-      <p class="instruction">
-        Drag the horizontal divider upward or downward.
-      </p>
+      <a
+        class="subject-circle"
+        href="hanshin-flood-1938.html"
+      >
+        The Great<br>
+        Hanshin Flood<br>
+        of 1938
+      </a>
 
-      <div class="comparison">
-        <img
-          class="after-image"
-          src="images/Hakutsuru Sake Brewery Museum 01 b.jpg"
-          alt="Modernized historical photograph of the Hakutsuru brewery"
-        >
-
-        <div class="before-layer">
-          <img
-           src="images/Hakutsuru Sake Brewery Museum 01 a.jpg"
-            alt="Original historical photograph of the Hakutsuru brewery"
-          >
-        </div>
-
-        <div class="divider"></div>
-        <div class="handle">↕</div>
-
-        <div class="labels">
-          <span class="label label-before">Original</span>
-          <span class="label label-after">Modernized</span>
-        </div>
+      <div
+        class="subject-circle future-circle"
+        aria-label="Future historical subject"
+      >
+        More stories<br>
+        to come
       </div>
 
-      <p class="caption">
-        Hakutsuru Sake Brewery Museum, Kobe. Historical photograph presented
-        alongside a digital colour reconstruction.
-      </p>
+    </nav>
 
-    </article>
-    <article class="story">
-
-  <h2>The Great Hanshin Flood of 1938</h2>
-
-  <p class="instruction">
-    Drag the divider upward or downward to compare the original photograph
-    with the modern reconstruction.
-  </p>
-
-  <div class="comparison">
-
-    <img
-      class="after-image"
-      src="images/Hakutsuru Fine Art Museum Tsuyu 1938 b.jpg"
-      alt="Modern reconstruction of the Sumiyoshi River below the Hakutsuru Fine Art Museum"
-    >
-
-    <div class="before-layer">
-      <img
-        src="images/Hakutsuru Fine Art Museum Tsuyu 1938 a.jpg"
-        alt="Historical photograph of the 1938 Hanshin flood below the Hakutsuru Fine Art Museum"
-      >
-    </div>
-
-    <div class="divider"></div>
-    <div class="handle">↕</div>
-
-    <div class="labels">
-      <span class="label label-before">1938 photograph</span>
-      <span class="label label-after">Modern reconstruction</span>
-    </div>
-
-  </div>
-
-  <div class="caption">
-
-    <p>
-This photograph was taken after the Great Hanshin Flood of July 1938
-(Showa 13). It shows the Sumiyoshi River below the Hakutsuru Fine Art
-Museum in what is now Higashinada Ward, Kobe.
-</p>
-
-<p>
-Contemporary accounts describe how the valley was transformed into a
-riverbed of rocks and debris. Several houses standing below the museum
-were completely swept away by the flood.
-</p>
-
-<p>
-Nearly ninety years later, the mountains, the museum and the river
-remain. This modern reconstruction attempts to show how the scene
-might appear if photographed today.
-</p>
-
-<p class="source">
-Historical photograph © City of Kobe.<br>
-Source: "The Great Flood of Showa 13 (Sumiyoshi Village Edition)".<br>
-Modern photographic reconstruction: Neighborhood Stories.
-</p>
-
-  </div>
-
-</article>
   </main>
-
-  <script>
-    document.querySelectorAll(".comparison").forEach((comparison) => {
-      const beforeLayer = comparison.querySelector(".before-layer");
-      const divider = comparison.querySelector(".divider");
-      const handle = comparison.querySelector(".handle");
-
-      function moveDivider(clientY) {
-        const rectangle = comparison.getBoundingClientRect();
-        let position = clientY - rectangle.top;
-
-        position = Math.max(0, Math.min(position, rectangle.height));
-
-        const percentage = (position / rectangle.height) * 100;
-
-        beforeLayer.style.height = percentage + "%";
-        divider.style.top = percentage + "%";
-        handle.style.top = percentage + "%";
-      }
-
-      let dragging = false;
-
-      comparison.addEventListener("pointerdown", (event) => {
-        dragging = true;
-        comparison.setPointerCapture(event.pointerId);
-        moveDivider(event.clientY);
-      });
-
-      comparison.addEventListener("pointermove", (event) => {
-        if (dragging) {
-          moveDivider(event.clientY);
-        }
-      });
-
-      comparison.addEventListener("pointerup", () => {
-        dragging = false;
-      });
-
-      comparison.addEventListener("pointercancel", () => {
-        dragging = false;
-      });
-    });
-  </script>
 
 </body>
 </html>
