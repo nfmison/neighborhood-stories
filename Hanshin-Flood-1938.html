@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Historical photographs — Neighborhood Stories</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 40px 20px 80px;
+      font-family: Arial, sans-serif;
+      color: #222;
+      background: #fff;
+    }
+
+    header {
+      width: min(1100px, 100%);
+      margin: 0 auto 40px;
+    }
+
+    header a {
+      color: #222;
+      text-decoration: none;
+      font-size: 15px;
+    }
+
+    h1 {
+      margin: 45px 0 10px;
+      font-size: clamp(30px, 5vw, 52px);
+      font-weight: normal;
+    }
+
+    .introduction {
+      max-width: 680px;
+      line-height: 1.6;
+      color: #555;
+    }
+
+    .story {
+      width: min(1100px, 100%);
+      margin: 70px auto 0;
+    }
+
+    .story h2 {
+      margin-bottom: 8px;
+      font-size: 25px;
+      font-weight: normal;
+    }
+
+    .instruction {
+      margin-top: 0;
+      color: #666;
+      font-size: 14px;
+    }
+
+    .comparison {
+      position: relative;
+      width: 100%;
+      margin-top: 22px;
+      overflow: hidden;
+      background: #eee;
+      touch-action: none;
+      user-select: none;
+    }
+
+    .comparison img {
+      display: block;
+      width: 100%;
+      height: auto;
+      pointer-events: none;
+    }
+
+    .after-image {
+      position: relative;
+      z-index: 1;
+    }
+
+    .before-layer {
+      position: absolute;
+      z-index: 2;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 50%;
+      overflow: hidden;
+    }
+
+    .before-layer img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      max-width: none;
+    }
+
+    .divider {
+      position: absolute;
+      z-index: 3;
+      left: 0;
+      top: 50%;
+      width: 100%;
+      height: 2px;
+      background: white;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.6);
+      transform: translateY(-1px);
+      pointer-events: none;
+    }
+
+    .handle {
+      position: absolute;
+      z-index: 4;
+      left: 50%;
+      top: 50%;
+      width: 52px;
+      height: 52px;
+      border: 2px solid white;
+      border-radius: 50%;
+      background: rgba(0, 0, 0, 0.55);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transform: translate(-50%, -50%);
+      font-size: 22px;
+      line-height: 1;
+      pointer-events: none;
+      box-shadow: 0 1px 7px rgba(0, 0, 0, 0.4);
+    }
+
+    .labels {
+      position: absolute;
+      z-index: 5;
+      inset: 0;
+      pointer-events: none;
+    }
+
+    .label {
+      position: absolute;
+      left: 14px;
+      padding: 7px 10px;
+      border-radius: 3px;
+      background: rgba(0, 0, 0, 0.6);
+      color: white;
+      font-size: 12px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .label-before {
+      top: 14px;
+    }
+
+    .label-after {
+      bottom: 14px;
+    }
+
+    .caption {
+      max-width: 760px;
+      margin-top: 18px;
+      line-height: 1.6;
+      color: #555;
+    }
+    .source {
+      margin-top: 22px;
+      font-size: 13px;
+      color: #888;
+}
+    @media (max-width: 600px) {
+      body {
+        padding-top: 25px;
+      }
+
+      .story {
+        margin-top: 45px;
+      }
+
+      .handle {
+        width: 44px;
+        height: 44px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <a href="historical-photographs.html">← Historical photographs</a>
+
+<h1>The Great Hanshin Flood of 1938</h1>
+
+    
+
+    <p class="introduction">
+      modern photographic reconstruction of photographs taken after the flood of July 3 to 5, 1938.
+    </p>
+  </header>
+
+  <main>
+    <article class="story">
+  <h2>The Great Hanshin Flood of 1938</h2>
+
+  <p class="instruction">
+    Drag the divider upward or downward to compare the original photograph
+    with the modern reconstruction.
+  </p>
+
+  <div class="comparison">
+
+    <img
+      class="after-image"
+      src="images/Hakutsuru Fine Art Museum Tsuyu 1938 b.jpg"
+      alt="Modern reconstruction of the Sumiyoshi River below the Hakutsuru Fine Art Museum"
+    >
+
+    <div class="before-layer">
+      <img
+        src="images/Hakutsuru Fine Art Museum Tsuyu 1938 a.jpg"
+        alt="Historical photograph of the 1938 Hanshin flood below the Hakutsuru Fine Art Museum"
+      >
+    </div>
+
+    <div class="divider"></div>
+    <div class="handle">↕</div>
+
+    <div class="labels">
+      <span class="label label-before">1938 photograph</span>
+      <span class="label label-after">Modern reconstruction</span>
+    </div>
+
+  </div>
+
+  <div class="caption">
+
+    <p>
+This photograph was taken after the Great Hanshin Flood of July 1938
+(Showa 13). It shows the Sumiyoshi River below the Hakutsuru Fine Art
+Museum in what is now Higashinada Ward, Kobe.
+</p>
+
+<p>
+Contemporary accounts describe how the valley was transformed into a
+riverbed of rocks and debris. Several houses standing below the museum
+were completely swept away by the flood.
+</p>
+
+<p>
+Nearly ninety years later, the mountains, the museum and the river
+remain. This modern reconstruction attempts to show how the scene
+might appear if photographed today.
+</p>
+
+<p class="source">
+Historical photograph © City of Kobe.<br>
+Source: "The Great Flood of Showa 13 (Sumiyoshi Village Edition)".<br>
+Modern photographic reconstruction: Neighborhood Stories.
+</p>
+
+  </div>
+
+</article>
+  </main>
+
+  <script>
+    document.querySelectorAll(".comparison").forEach((comparison) => {
+      const beforeLayer = comparison.querySelector(".before-layer");
+      const divider = comparison.querySelector(".divider");
+      const handle = comparison.querySelector(".handle");
+
+      function moveDivider(clientY) {
+        const rectangle = comparison.getBoundingClientRect();
+        let position = clientY - rectangle.top;
+
+        position = Math.max(0, Math.min(position, rectangle.height));
+
+        const percentage = (position / rectangle.height) * 100;
+
+        beforeLayer.style.height = percentage + "%";
+        divider.style.top = percentage + "%";
+        handle.style.top = percentage + "%";
+      }
+
+      let dragging = false;
+
+      comparison.addEventListener("pointerdown", (event) => {
+        dragging = true;
+        comparison.setPointerCapture(event.pointerId);
+        moveDivider(event.clientY);
+      });
+
+      comparison.addEventListener("pointermove", (event) => {
+        if (dragging) {
+          moveDivider(event.clientY);
+        }
+      });
+
+      comparison.addEventListener("pointerup", () => {
+        dragging = false;
+      });
+
+      comparison.addEventListener("pointercancel", () => {
+        dragging = false;
+      });
+    });
+  </script>
+
+</body>
+</html>
